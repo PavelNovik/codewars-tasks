@@ -318,9 +318,15 @@
 //   return new Array(n).fill(s).join('');
 // }
 
-function repeatStr(n, s) {
-  return s.repeat(n);
+// function repeatStr(n, s) {
+//   return s.repeat(n);
+// }
+// console.log(repeatStr(3, '*'));
+// console.log(repeatStr(5, '#'));
+// console.log(repeatStr(2, 'ha '));
+
+function filter_list(l) {
+  return l.filter((a) => typeof a === 'number');
 }
-console.log(repeatStr(3, '*'));
-console.log(repeatStr(5, '#'));
-console.log(repeatStr(2, 'ha '));
+
+console.log(filter_list([1, 2, 'a', 'b']));
