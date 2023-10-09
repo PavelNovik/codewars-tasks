@@ -260,19 +260,67 @@
 // console.log(XO('ooxXm'));
 // console.log(XO('zpzpzpp'));
 
-function duplicateCount(text) {
-  const textArray = text.toLowerCase().split('');
-  const unic = new Set(textArray);
-  const res = [];
-  unic.forEach((n) =>
-    textArray.filter((a) => a === n).length > 1 ? res.push(n) : res
-  );
-  return res.length;
-}
+// function duplicateCount(text) {
+//   const textArray = text.toLowerCase().split('');
+//   const unic = new Set(textArray);
+//   const res = [];
+//   unic.forEach((n) =>
+//     textArray.filter((a) => a === n).length > 1 ? res.push(n) : res
+//   );
+//   return res.length;
+// }
 
-console.log(duplicateCount(''));
-console.log(duplicateCount('abcde'));
-console.log(duplicateCount('aabbcde'));
-console.log(duplicateCount('aabBcde'));
-console.log(duplicateCount('Indivisibility'));
-console.log(duplicateCount('Indivisibilities'));
+// console.log(duplicateCount(''));
+// console.log(duplicateCount('abcde'));
+// console.log(duplicateCount('aabbcde'));
+// console.log(duplicateCount('aabBcde'));
+// console.log(duplicateCount('Indivisibility'));
+// console.log(duplicateCount('Indivisibilities'));
+
+// function duplicateEncode(word) {
+//   const res = new Array(word.length).fill(')');
+//   const textArray = word.toLowerCase().split('');
+//   const textSet = new Set(textArray);
+//   const onlyOne = [];
+//   textSet.forEach((a) => {
+//     if (textArray.filter((b) => b === a).length === 1) onlyOne.push(a);
+//   });
+//   onlyOne.map((a) => (res[textArray.indexOf(a)] = '('));
+
+//   return res.join('');
+// }
+
+// console.log(duplicateEncode('din'));
+// console.log(duplicateEncode('recede'));
+// console.log(duplicateEncode('Success'));
+// console.log(duplicateEncode('(( @'));
+
+// console.log(duplicateEncode(' ( ( )')); // expected '((((((' to equal ')))))('
+// console.log(duplicateEncode('Svnnnn)annOn')); // expected '((((((((((((' to equal '(())))(())
+
+// var str = "How can mirrors be real if our eyes aren't real";
+
+// String.prototype.toJadenCase = function () {
+//   return this.split(' ')
+//     .map((a) => a.replace(a[0], a[0].toUpperCase()))
+//     .join(' ');
+// };
+
+// console.log(str.toJadenCase());
+
+// function removeChar(str) {
+//   return str.slice(1, -1);
+// }
+
+// console.log(removeChar('eloquent'));
+
+// function repeatStr(n, s) {
+//   return new Array(n).fill(s).join('');
+// }
+
+// function repeatStr(n, s) {
+//   return s.repeat(n);
+// }
+// console.log(repeatStr(3, '*'));
+// console.log(repeatStr(5, '#'));
+// console.log(repeatStr(2, 'ha '));
