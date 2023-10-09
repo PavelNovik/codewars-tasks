@@ -318,9 +318,9 @@
 //   return new Array(n).fill(s).join('');
 // }
 
-// function repeatStr(n, s) {
-//   return s.repeat(n);
-// }
-// console.log(repeatStr(3, '*'));
-// console.log(repeatStr(5, '#'));
-// console.log(repeatStr(2, 'ha '));
+function repeatStr(n, s) {
+  return s.repeat(n);
+}
+console.log(repeatStr(3, '*'));
+console.log(repeatStr(5, '#'));
+console.log(repeatStr(2, 'ha '));
