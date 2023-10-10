@@ -325,8 +325,115 @@
 // console.log(repeatStr(5, '#'));
 // console.log(repeatStr(2, 'ha '));
 
-function filter_list(l) {
-  return l.filter((a) => typeof a === 'number');
+// function filter_list(l) {
+//   return l.filter((a) => typeof a === 'number');
+// }
+
+// console.log(filter_list([1, 2, 'a', 'b']));
+
+// function arrayPlusArray(arr1, arr2) {
+//   return [...arr1, ...arr2].reduce((s, a) => s + a); //something went wrong
+// }
+// console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]));
+
+// function isValidWalk(walk) {
+//   //insert brilliant code here
+//   const n = walk.filter((a) => a === 'n').length;
+//   const w = walk.filter((a) => a === 'w').length;
+//   const s = walk.filter((a) => a === 's').length;
+//   const e = walk.filter((a) => a === 'e').length;
+
+//   return walk.length === 10 && n === s && w === e;
+// }
+
+// console.log(isValidWalk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's']));
+// console.log(
+//   isValidWalk(['w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e'])
+// );
+// console.log(isValidWalk(['w']));
+// console.log(isValidWalk(['n', 'n', 'n', 's', 'n', 's', 'n', 's', 'n', 's']));
+
+// function divideStrings(a, b) {
+//   return [
+//     Math.floor(a / b)
+//       .toPrecision(100)
+//       .split('.')[0],
+//     (+a % +b).toPrecision(100),
+//   ]; // This doesn't work on big numbers!
+// }
+
+// console.log(divideStrings(46350528630000, 676229300));
+// console.log(
+//   divideStrings(
+//     7711204801413302919526590818551287111729188125765382417063294120393489313832392310304013839849277835058151055502743550324976342419304749922108,
+//     9275929188716882728209876314856925718979930170965118668962883257509487400902369678509528469283314380978656305051945080913806104
+//   )
+// );
+// console.log(
+//   divideStrings(
+//     410880131643823240491543121071872920232640214532506695892159701025515120745718163318180959421228437366526500000000,
+//     429172786338579640962408505927551775339148866000720000
+//   )
+// );
+// console.log(BigInt('600') / BigInt('2'));
+
+// console.log(
+//   '3024520247146086866523992143407059324919740316472841840298271937510471537467120737559645140589916137370308004081461659150'
+//     .length
+// );
+
+function stringIntGreaterThan(a, b) {
+  const arrA = a.split('');
+  const arrB = b.split('');
+  let result;
+  if (arrA.length > arrB.length) {
+    result = true;
+  }
+  if (arrA.length < arrB.length) {
+    result = false;
+  }
+  if (arrA.length === arrB.length) {
+    for (let i = 0; i < arrA.length; i++) {
+      if (+arrA[i] > +arrB[i]) {
+        result = true;
+        break;
+      }
+      if (+arrA[i] < +arrB[i]) {
+        result = false;
+        break;
+      }
+      if (+arrA[i] === +arrB[i]) {
+        result = false;
+        continue;
+      }
+    }
+  }
+
+  return result;
 }
 
-console.log(filter_list([1, 2, 'a', 'b']));
+// function stringIntGreaterThan(a, b) {
+//   const arrA = a.split('');
+//   const arrB = b.split('');
+//   let result =
+//     arrA.length > arrB.length
+//       ? true
+//       : arrA.length < arrB.length
+//       ? false
+//       : arrA.map((n, i) => {
+//         +n > +arrB[i] ?
+//       });
+
+//   return result;
+// }
+
+console.log(stringIntGreaterThan('161', '31'));
+console.log(stringIntGreaterThan('31', '162'));
+console.log(stringIntGreaterThan('234', '134'));
+console.log(stringIntGreaterThan('1345345', '134534'));
+console.log(
+  stringIntGreaterThan(
+    '1329879643513216515489679841651615',
+    '1329879643513216515489679841651614'
+  )
+);
