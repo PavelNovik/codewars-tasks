@@ -90,10 +90,10 @@
 // repeatString("yo", 3, ",") => "yo,yo,yo"
 // for или str.repeat()
 
-const repeatString = (str, x, div) => {
-  //   return new Array(x).fill(str).join(div);
-  return (str + ' ').repeat(x).trim().replaceAll(' ', div);
-};
+// const repeatString = (str, x, div) => {
+//   return new Array(x).fill(str).join(div);
+//   return (str + ' ').repeat(x).trim().replaceAll(' ', div);
+// };
 
 // console.log(repeatString('xxx', 4, ' '));
 // console.log(repeatString('xxx', 4, ','));
@@ -103,11 +103,11 @@ const repeatString = (str, x, div) => {
 // checkStart("Incubator", "yo") => false
 // str.startWith() slice indexOF
 
-const checkStart = (str, alf) => {
-  //   return str.toLowerCase().startsWith(alf.toLowerCase());
-  //   return str.slice(0, alf.length).toLowerCase() === alf.toLowerCase();
-  return str.toLowerCase().indexOf(alf.toLowerCase()) === 0 ? true : false;
-};
+// const checkStart = (str, alf) => {
+//   return str.toLowerCase().startsWith(alf.toLowerCase());
+//   return str.slice(0, alf.length).toLowerCase() === alf.toLowerCase();
+//   return str.toLowerCase().indexOf(alf.toLowerCase()) === 0 ? true : false;
+// };
 
 // console.log(checkStart('Incubator', 'inc'));
 // console.log(checkStart('Incubator', 'yo'));
@@ -115,9 +115,9 @@ const checkStart = (str, alf) => {
 //3. Реализуйте функцию, которая принимает параметром строку и число (количество символов), а возвращает строку из параметров, обрезанную до указанного количества символов и завершает её многоточием.
 //truncateString("Всем студентам инкубатора желаю удачи!", 10) => "Всем студе..."
 
-const truncateString = (str, x) => {
-  return str.slice(0, x) + '...';
-};
+// const truncateString = (str, x) => {
+//   return str.slice(0, x) + '...';
+// };
 
 // console.log(truncateString('Всем студентам инкубатора желаю удачи!', 10));
 
@@ -126,9 +126,9 @@ const truncateString = (str, x) => {
 // getMinLengthWord("") => null
 // split()
 
-const getMinLengthWord = (str) => {
-  return str ? str.split(' ').sort((a, b) => a.length - b.length)[0] : null;
-};
+// const getMinLengthWord = (str) => {
+//   return str ? str.split(' ').sort((a, b) => a.length - b.length)[0] : null;
+// };
 
 // console.log(getMinLengthWord('Всем студентам инкубатора желаю удачи!'));
 // console.log(getMinLengthWord(''));
@@ -138,16 +138,16 @@ const getMinLengthWord = (str) => {
 
 // !!!!!!!!!!!!!!!!!!После решения 5 задач - поднимаем руку!!!!!!!!
 
-const setUpperCase = (str) => {
-  return (
-    str
-      .toLowerCase()
-      .split(' ')
-      // .map((w) => w[0].toUpperCase().concat(w.slice(1)))
-      .map((w) => w.replace(w[0], w[0].toUpperCase()))
-      .join(' ')
-  );
-};
+// const setUpperCase = (str) => {
+//   return (
+//     str
+//       .toLowerCase()
+//       .split(' ')
+//       // .map((w) => w[0].toUpperCase().concat(w.slice(1)))
+//       .map((w) => w.replace(w[0], w[0].toUpperCase()))
+//       .join(' ')
+//   );
+// };
 
 // console.log(setUpperCase('всем стУдентам инкуБатора Желаю удачИ!'));
 
@@ -163,18 +163,89 @@ const setUpperCase = (str) => {
 // isIncludes("Incubator", "inba") => true
 // isIncludes("Incubator", "Incubatorrr")=> true
 
-const isIncludes = (str, sym) => {
-  return sym
-    .toLowerCase()
-    .split('')
-    .map((c) => str.toLowerCase().includes(c))
-    .includes(false)
-    ? false
-    : true;
-};
+// const isIncludes = (str, sym) => {
+//   return sym
+//     .toLowerCase()
+//     .split('')
+//     .map((c) => str.toLowerCase().includes(c))
+//     .includes(false)
+//     ? false
+//     : true;
+// };
 
-console.log(isIncludes('Incubator', 'Cut'));
-console.log(isIncludes('Incubator', 'table'));
-console.log(isIncludes('Incubator', 'inbba'));
-console.log(isIncludes('Incubator', 'inba'));
-console.log(isIncludes('Incubator', 'Incubatorrr'));
+// console.log(isIncludes('Incubator', 'Cut'));
+// console.log(isIncludes('Incubator', 'table'));
+// console.log(isIncludes('Incubator', 'inbba'));
+// console.log(isIncludes('Incubator', 'inba'));
+// console.log(isIncludes('Incubator', 'Incubatorrr'));
+
+// function squareSum(numbers) {
+//   return numbers.reduce((acc, n) => acc + n * n, 0);
+// }
+
+// console.log(squareSum([0, 3, 4, 5]));
+
+// function alphabetPosition(text) {
+//   return text
+//     .toLowerCase()
+//     .split('')
+//     .filter((c) => c.charCodeAt() - 96 >= 1 && c.charCodeAt() - 96 <= 26)
+//     .map((c) => c.charCodeAt() - 96)
+//     .join(' ');
+// }
+
+// console.log('a'.charCodeAt() - 96);
+// console.log("'".charCodeAt() - 96);
+// console.log('.'.charCodeAt() - 96);
+// console.log(' '.charCodeAt() - 96);
+// console.log('z'.charCodeAt() - 96);
+
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+// console.log(alphabetPosition('The narwhal bacons at midnight.'));
+// console.log(alphabetPosition('The narwhal'));
+
+// function DNAStrand(dna) {
+//   //your code here
+//   return dna
+//     .split('')
+//     .map((c) => {
+//       switch (c) {
+//         case 'A':
+//           return 'T';
+//         case 'T':
+//           return 'A';
+//         case 'C':
+//           return 'G';
+//         case 'G':
+//           return 'C';
+
+//         default:
+//           break;
+//       }
+//     })
+//     .join('');
+// }
+// console.log(DNAStrand('AAAA'));
+// console.log(DNAStrand('ATTGC'));
+// console.log(DNAStrand('GTAT'));
+
+// function maskify(cc) {
+//   return cc.length < 5
+//     ? cc
+//     : new Array(cc.length - 4).fill('#').concat(cc.slice(-4)).join('');
+// }
+
+// console.log(maskify('4556364607935616'));
+// console.log(maskify('1'));
+// console.log(maskify('11111'));
+
+// const summation = function (num) {
+//   // Code here
+//   let res = 0;
+//   for (let i = 0; i <= num; i++) {
+//     res += i;
+//   }
+//   return res;
+// };
+
+// console.log(summation(2));
