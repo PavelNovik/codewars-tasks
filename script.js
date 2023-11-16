@@ -249,3 +249,115 @@
 // };
 
 // console.log(summation(2));
+
+// function narcissistic(value) {
+//   const arrStr = [...`${value}`];
+//   return (
+//     value === arrStr.reduce((acc, n) => acc + Math.pow(+n, arrStr.length), 0)
+//   );
+
+//   // Code me to return true or false
+// }
+
+// console.log(narcissistic(153));
+
+// function tribonacci(signature, n) {
+//   if (n === 0) signature.length = 0;
+//   if (n < 3) signature = signature.slice(0, n);
+
+//   //your code here
+
+//   for (let i = 2; i < n - 1; i++) {
+//     signature.push(signature[i - 2] + signature[i - 1] + signature[i]);
+//   }
+//   return signature;
+// }
+
+// console.log(tribonacci([1, 1, 1], 10));
+// console.log(tribonacci([0, 0, 1], 10));
+// console.log(tribonacci([0, 1, 1], 10));
+// console.log(tribonacci([1, 0, 0], 10));
+// console.log(tribonacci([0, 0, 0], 10));
+// console.log(tribonacci([1, 2, 3], 10));
+// console.log(tribonacci([3, 2, 1], 10));
+// console.log(tribonacci([300, 200, 100], 0));
+// console.log(tribonacci([1, 1, 1], 1));
+
+// var uniqueInOrder = function (iterable) {
+//   //your code here - remember iterable can be a string or an array
+//   const res = typeof iterable === 'string' ? iterable.split('') : iterable;
+//   return res.filter((el, i, arr) => el !== arr[i + 1]);
+// };
+
+// console.log(uniqueInOrder([1, 2, 2, 3, 3]));
+// console.log(uniqueInOrder('AAAABBBCCDAABBB'));
+// console.log(uniqueInOrder('ABBCcAD'));
+
+function stringIntGreaterThan(a, b) {
+  const arrA = [...a];
+  const arrB = [...b];
+  const sumA = arrA.reduce((acc, el) => (acc + el !== '-' ? +el : 0), 0);
+  const sumB = arrB.reduce((acc, el) => (acc + el !== '-' ? +el : 0), 0);
+  console.log(sumA, ' ------ ', sumB);
+  return arrA[0] === '-' && arrB[0] !== '-'
+    ? false
+    : arrB[0] === '-' && arrA[0] !== '-'
+    ? true
+    : arrA[0] === '-' && arrB[0] === '-'
+    ? arrA.length === arrB.length
+      ? sumA < sumB
+      : arrA.length > arrB.length
+      ? false
+      : true
+    : arrA.length === arrB.length
+    ? sumA > sumB
+    : arrA.length > arrB.length
+    ? true
+    : false;
+  //   if (arrA.length > arrB.length) {
+  //     result = true;
+  //   }
+  //   if (arrA.length < arrB.length) {
+  //     result = false;
+  //   }
+  //   if (arrA.length === arrB.length) {
+  //     for (let i = 0; i < arrA.length; i++) {
+  //       if (+arrA[i] > +arrB[i]) {
+  //         result = true;
+  //         break;
+  //       }
+  //       if (+arrA[i] < +arrB[i]) {
+  //         result = false;
+  //         break;
+  //       }
+  //       if (+arrA[i] === +arrB[i]) {
+  //         result = false;
+  //         continue;
+  //       }
+  //     }
+  //   }
+  //   const result = +a - +b;
+
+  //   return result;
+}
+
+console.log(stringIntGreaterThan('-12', '-43'));
+console.log(
+  stringIntGreaterThan(
+    '3329879643513216515489679841651615',
+    '3298796435132165154896798416516156'
+  )
+);
+console.log(
+  stringIntGreaterThan(
+    '3298796435132165154896798416516156',
+    '3329879643513216515489679841651615'
+  )
+);
+
+console.log(
+  3329879643513216515489679841651615 / 3298796435132165154896798416516156 > 1
+);
+console.log(
+  3298796435132165154896798416516156 / 3329879643513216515489679841651615 > 1
+);
