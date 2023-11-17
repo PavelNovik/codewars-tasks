@@ -386,3 +386,42 @@
 // console.log(
 //   1329879643513216515489679841651615 / 1329879643513216515489679841651614 === 1
 // );
+
+// Array.prototype.toString = function () {
+//   return `[${this.map((arg) =>
+//     typeof arg === 'object' ? arg.toString() : arg
+//   )}]`;
+// };
+
+// function toStr(arr) {
+//   return `[${arr.map((arg) => (typeof arg === 'object' ? toStr(arg) : arg))}]`;
+// }
+
+// const arr = [];
+// console.log(typeof arr);
+
+// console.log(toStr([]));
+// console.log(toStr([[[[[[]]], []]]]));
+// console.log(
+//   toStr([1.545, [2, 4, [23532], 55, 2.3, [15.22, 0.3, [], [[72, 3], 5]]]])
+// );
+// console.log(toStr(['foobar', [['hello']]]));
+// console.log(toStr());
+// console.log(toStr());
+
+// console.log([].toString());
+// console.log([3.14].toString());
+// console.log([1, 2, 3].toString());
+// console.log(['foobar', [['hello']]].toString());
+// console.log([].toString() === '[]');
+// console.log([3.14].toString() === '[3.14]');
+// console.log([1, 2, 3].toString() === '[1,2,3]');
+// console.log([1, 2.72, 4, 3.14, 9].toString() === '[1,2.72,4,3.14,9]');
+
+const treeOne = new Node(
+  2,
+  new Node(8, new Node(1), new Node(3)),
+  new Node(9, new Node(4), new Node(5))
+);
+
+console.log(treeOne);
