@@ -293,71 +293,96 @@
 // console.log(uniqueInOrder('AAAABBBCCDAABBB'));
 // console.log(uniqueInOrder('ABBCcAD'));
 
-function stringIntGreaterThan(a, b) {
-  const arrA = [...a];
-  const arrB = [...b];
-  const sumA = arrA.reduce((acc, el) => (acc + el !== '-' ? +el : 0), 0);
-  const sumB = arrB.reduce((acc, el) => (acc + el !== '-' ? +el : 0), 0);
-  console.log(sumA, ' ------ ', sumB);
-  return arrA[0] === '-' && arrB[0] !== '-'
-    ? false
-    : arrB[0] === '-' && arrA[0] !== '-'
-    ? true
-    : arrA[0] === '-' && arrB[0] === '-'
-    ? arrA.length === arrB.length
-      ? sumA < sumB
-      : arrA.length > arrB.length
-      ? false
-      : true
-    : arrA.length === arrB.length
-    ? sumA > sumB
-    : arrA.length > arrB.length
-    ? true
-    : false;
-  //   if (arrA.length > arrB.length) {
-  //     result = true;
-  //   }
-  //   if (arrA.length < arrB.length) {
-  //     result = false;
-  //   }
-  //   if (arrA.length === arrB.length) {
-  //     for (let i = 0; i < arrA.length; i++) {
-  //       if (+arrA[i] > +arrB[i]) {
-  //         result = true;
-  //         break;
-  //       }
-  //       if (+arrA[i] < +arrB[i]) {
-  //         result = false;
-  //         break;
-  //       }
-  //       if (+arrA[i] === +arrB[i]) {
-  //         result = false;
-  //         continue;
-  //       }
-  //     }
-  //   }
-  //   const result = +a - +b;
+// function stringIntGreaterThan(a, b) {
+//   const arrA = [...a];
+//   const arrB = [...b];
+//   // console.log(arrA);
+//   // console.log(arrB);
+//   const sumA = arrA.reduce((acc, el) => (el !== '-' ? acc + +el : acc + 0), 0);
+//   const sumB = arrB.reduce((acc, el) => (el !== '-' ? acc + +el : acc + 0), 0);
+//   console.log(sumA, ' ------ ', sumB);
+//   return arrA[0] === '-' && arrB[0] !== '-'
+//     ? false
+//     : arrB[0] === '-' && arrA[0] !== '-'
+//     ? true
+//     : arrA[0] === '-' && arrB[0] === '-'
+//     ? arrA.length === arrB.length
+//       ? sumA < sumB
+//       : arrA.length > arrB.length
+//       ? false
+//       : true
+//     : arrA.length === arrB.length
+//     ? +a / +b === 1
+//       ? sumA > sumB
+//       : +a / +b > 1
+//     : arrA.length > arrB.length
+//     ? true
+//     : false;
+//   if (arrA.length > arrB.length) {
+//     result = true;
+//   }
+//   if (arrA.length < arrB.length) {
+//     result = false;
+//   }
+//   if (arrA.length === arrB.length) {
+//     for (let i = 0; i < arrA.length; i++) {
+//       if (+arrA[i] > +arrB[i]) {
+//         result = true;
+//         break;
+//       }
+//       if (+arrA[i] < +arrB[i]) {
+//         result = false;
+//         break;
+//       }
+//       if (+arrA[i] === +arrB[i]) {
+//         result = false;
+//         continue;
+//       }
+//     }
+//   }
+//   const result = +a - +b;
 
-  //   return result;
-}
+//   return result;
+// }
 
-console.log(stringIntGreaterThan('-12', '-43'));
-console.log(
-  stringIntGreaterThan(
-    '3329879643513216515489679841651615',
-    '3298796435132165154896798416516156'
-  )
-);
-console.log(
-  stringIntGreaterThan(
-    '3298796435132165154896798416516156',
-    '3329879643513216515489679841651615'
-  )
-);
+// console.log(stringIntGreaterThan('-12', '-43'));
+// console.log(
+//   stringIntGreaterThan(
+//     '3329879643513216515489679841651615',
+//     '3298796435132165154896798416516156'
+//   )
+// );
+// console.log(
+//   stringIntGreaterThan(
+//     '3298796435132165154896798416516156',
+//     '3329879643513216515489679841651615'
+//   )
+// );
+// console.log(
+//   stringIntGreaterThan(
+//     '3329879643513216515489679841651615',
+//     '3298796435132165154896798416516156'
+//   )
+// ); // true
+// console.log(
+//   stringIntGreaterThan(
+//     '3298796435132165154896798416516156',
+//     '3329879643513216515489679841651615'
+//   )
+// ); // false
+// console.log(
+//   stringIntGreaterThan(
+//     '1329879643513216515489679841651615',
+//     '1329879643513216515489679841651614'
+//   )
+// ); // true
 
-console.log(
-  3329879643513216515489679841651615 / 3298796435132165154896798416516156 > 1
-);
-console.log(
-  3298796435132165154896798416516156 / 3329879643513216515489679841651615 > 1
-);
+// console.log(
+//   3329879643513216515489679841651615 / 3298796435132165154896798416516156 > 1
+// );
+// console.log(
+//   3298796435132165154896798416516156 / 3329879643513216515489679841651615 > 1
+// );
+// console.log(
+//   1329879643513216515489679841651615 / 1329879643513216515489679841651614 === 1
+// );
