@@ -417,11 +417,3 @@
 // console.log([3.14].toString() === '[3.14]');
 // console.log([1, 2, 3].toString() === '[1,2,3]');
 // console.log([1, 2.72, 4, 3.14, 9].toString() === '[1,2.72,4,3.14,9]');
-
-const treeOne = new Node(
-  2,
-  new Node(8, new Node(1), new Node(3)),
-  new Node(9, new Node(4), new Node(5))
-);
-
-console.log(treeOne);
